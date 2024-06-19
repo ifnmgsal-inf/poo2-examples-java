@@ -3,3 +3,5 @@
 - Generics
 - Varargs
 - Wildcards
+- Method reference
+- Lambda expression
