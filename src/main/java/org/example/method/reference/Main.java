@@ -31,6 +31,5 @@ public class Main {
 
         // d) Reference to an instance method of an arbitrary object of a
         // particular type
-
     }
 }

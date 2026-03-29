@@ -9,15 +9,15 @@ public class Main {
     static Boolean[] boolArray = {true, false, true};
 
     public static void main(String[] args) {
-        //System.out.println("Generics Examples!");
-        //listaSemTipagem();
+        System.out.println("Generics Examples!");
+        listaSemTipagem();
         //listaComTipagem();
         // MAS SE QUISERMOS UMA LISTA ADAPTÁVEL A DIFERENTES TIPOS?
         //listaComObject();
         // FINALMENTE! USANDO GENERICS !!!
         //listaComGenerics();
         
-        mutableStackExample();
+        //mutableStackExample();
     }
 
     private static void mutableStackExample() {
