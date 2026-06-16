@@ -2,9 +2,7 @@
 
 ## Visão geral
 
-Mockito é um framework de mocking para Java usado para simular dependências em testes unitários, permitindo que a classe sob teste seja analisada de forma isolada, sem depender da execução real de banco de dados, APIs, repositórios ou outros colaboradores externos. Esse uso é especialmente importante quando o objetivo é validar comportamento, regras de negócio e interações entre objetos, sem transformar o teste em um teste de integração disfarçado.
-
-No contexto de disciplinas de Programação Orientada a Objetos, o Mockito é útil porque reforça conceitos como responsabilidade de classe, colaboração entre objetos, injeção de dependências e baixo acoplamento. Em turmas que já estudaram a teoria básica de testes, o avanço natural é aprender a controlar cenários, simular respostas e verificar chamadas com uma ferramenta largamente usada no ecossistema Java.
+Mockito é um framework de mocking para Java usado para simular dependências em testes unitários, permitindo que a classe sob teste seja analisada de forma isolada, sem depender da execução real de banco de dados, APIs, repositórios ou outros colaboradores externos. Esse uso é especialmente importante quando o objetivo é validar comportamento, regras de negócio e interações entre objetos.
 
 ## O que o Mockito resolve
 
