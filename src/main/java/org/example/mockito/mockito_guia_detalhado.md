@@ -155,7 +155,7 @@ O trecho `when(repository.salvar(aluno)).thenReturn(aluno)` configura o comporta
 
 Em seguida, `service.cadastrar(aluno)` executa o método real da classe de serviço. É nesse ponto que a lógica de negócio é realmente exercitada.
 
-Depois disso, o teste usa `assertEquals(...)` para validar o resultado e `verify(repository).salvar(aluno)` para confirmar que a dependência foi acionada corretamente. A combinação entre asserção de resultado e verificação de interação costuma produzir testes mais expressivos quando existe colaboração entre objetos [cite:11][cite:13].
+Depois disso, o teste usa `assertEquals(...)` para validar o resultado e `verify(repository).salvar(aluno)` para confirmar que a dependência foi acionada corretamente. A combinação entre asserção de resultado e verificação de interação costuma produzir testes mais expressivos quando existe colaboração entre objetos.
 
 ## Simulando exceções
 
@@ -175,11 +175,11 @@ void deveLancarExcecaoQuandoRepositorioFalhar() {
 }
 ```
 
-Esse tipo de cenário ajuda a mostrar aos alunos que um bom conjunto de testes não cobre apenas o caminho feliz, mas também casos de falha e comportamento inesperado [cite:18][cite:21].
+Esse tipo de cenário ajuda a mostrar aos alunos que um bom conjunto de testes não cobre apenas o caminho feliz, mas também casos de falha e comportamento inesperado.
 
 ## Capturando argumentos com `@Captor`
 
-Em alguns cenários, não basta verificar se o método foi chamado. É necessário verificar qual objeto foi efetivamente enviado ao mock [cite:23]. Nessa situação, o `ArgumentCaptor` se torna uma ferramenta muito útil [cite:23].
+Em alguns cenários, não basta verificar se o método foi chamado. É necessário verificar qual objeto foi efetivamente enviado ao mock. Nessa situação, o `ArgumentCaptor` se torna uma ferramenta muito útil.
 
 Exemplo:
 
@@ -199,36 +199,30 @@ void deveEnviarAlunoCorretoParaPersistencia() {
 }
 ```
 
-Esse padrão é especialmente importante quando a classe modifica o objeto antes de persisti-lo, por exemplo definindo data de cadastro, status inicial ou identificadores internos [cite:23].
+Esse padrão é especialmente importante quando a classe modifica o objeto antes de persisti-lo, por exemplo definindo data de cadastro, status inicial ou identificadores internos.
 
 ## Boas práticas no uso do Mockito
 
-Algumas práticas tornam os testes com Mockito mais úteis e mais fáceis de manter [cite:11][cite:18]:
+Algumas práticas tornam os testes com Mockito mais úteis e mais fáceis de manter:
 
-- Testar comportamento, e não detalhes internos da implementação [cite:11][cite:18].
-- Usar mocks apenas nas dependências necessárias [cite:11][cite:13].
-- Escrever nomes de testes descritivos, informando cenário, ação e resultado esperado [cite:18][cite:21].
-- Cobrir tanto casos de sucesso quanto casos de falha [cite:18][cite:21].
-- Evitar verificações excessivas com `verify(...)` quando o retorno já demonstra claramente o comportamento esperado [cite:11][cite:13].
+- Testar comportamento, e não detalhes internos da implementação.
+- Usar mocks apenas nas dependências necessárias.
+- Escrever nomes de testes descritivos, informando cenário, ação e resultado esperado.
+- Cobrir tanto casos de sucesso quanto casos de falha.
+- Evitar verificações excessivas com `verify(...)` quando o retorno já demonstra claramente o comportamento esperado.
 
-Essas recomendações ajudam a evitar testes frágeis, excessivamente acoplados ao código interno e difíceis de refatorar [cite:11][cite:18].
+Essas recomendações ajudam a evitar testes frágeis, excessivamente acoplados ao código interno e difíceis de refatorar.
 
-## Erros comuns dos estudantes
+## Erros comuns em testes com Mockito
 
-Os erros mais frequentes em testes com Mockito costumam estar ligados mais à estratégia do teste do que à sintaxe da ferramenta [cite:11][cite:13]. Entre os principais problemas estão o excesso de mocks, a verificação desnecessária de toda interação e a ausência de cenários negativos [cite:11][cite:13].
+Os erros mais frequentes em testes com Mockito costumam estar ligados mais à estratégia do teste do que à sintaxe da ferramenta [cite:11][cite:13]. Entre os principais problemas estão o excesso de mocks, a verificação desnecessária de toda interação e a ausência de cenários negativos.
 
-Outro erro comum é transformar o teste em uma cópia da implementação, repetindo exatamente a lógica interna da classe em vez de validar o seu comportamento observável [cite:11][cite:18]. Quando isso acontece, o teste perde valor pedagógico e prático, pois deixa de funcionar como proteção contra regressões reais [cite:11][cite:18].
-
-## Sugestão de abordagem didática
-
-Para trabalhar esse conteúdo em aula, uma boa sequência é começar com uma classe simples de serviço, apresentar a dependência real e perguntar por que seu uso direto dificulta o teste [cite:11][cite:17]. Em seguida, pode-se substituir essa dependência por um mock, configurando um retorno com `when(...).thenReturn(...)` e demonstrando a diferença entre testar o comportamento da regra e testar a infraestrutura [cite:11][cite:23].
-
-Depois disso, convém mostrar explicitamente o papel das anotações `@Mock`, `@InjectMocks`, `@ExtendWith(MockitoExtension.class)` e `@Captor`, pois elas tornam o teste mais próximo da prática profissional e mais limpo para leitura em sala [cite:18][cite:23]. Fechar com um caso de exceção e uma verificação usando `verify(...)` ajuda a consolidar a ideia de cenário, ação e validação [cite:13][cite:23].
+Outro erro comum é transformar o teste em uma cópia da implementação, repetindo exatamente a lógica interna da classe em vez de validar o seu comportamento observável. Quando isso acontece, o teste perde valor pedagógico e prático, pois deixa de funcionar como proteção contra regressões reais.
 
 ## Referências bibliográficas
 
-- Acharya, N. *Mockito Essentials*. Packt Publishing, 2014 [cite:16].
-- Grzejszczak, A. *Mockito Cookbook*. Packt Publishing, 2014 [cite:22].
-- Szczepanek, M. et al. *Mockito Made Clear*. O'Reilly Media, 2023 [cite:13].
-- JUnit Team. *JUnit User Guide* [cite:21].
-- Mockito Contributors. *Mockito framework site* [cite:11].
+- Acharya, N. *Mockito Essentials*. Packt Publishing, 2014.
+- Grzejszczak, A. *Mockito Cookbook*. Packt Publishing, 2014.
+- Szczepanek, M. et al. *Mockito Made Clear*. O'Reilly Media, 2023.
+- JUnit Team. *JUnit User Guide*.
+- Mockito Contributors. *Mockito framework site*.
